@@ -41,8 +41,8 @@ return {
     ["L"] = { "]b", desc = "Next buffer", remap = true },
     ["H"] = { "[b", desc = "Previous buffer", remap = true },
 
-    ["<M-j>"] = { "V:m '>+1<CR>gv=gv<Esc>", desc = "Move line down" },
-    ["<M-k>"] = { "V:m '<-2<CR>gv=gv<Esc>", desc = "Move line up" },
+    ["<M-j>"] = { ":m .+1<Esc>", desc = "Move line down" },
+    ["<M-k>"] = { ":m .-2<Esc>", desc = "Move line up" },
 
     ["<Leader>d"] = { [["dd]], desc = "Delete without saving to buffer" },
     ["<Leader>D"] = { [["dD]], desc = "Delete without saving to buffer" },
@@ -53,22 +53,29 @@ return {
     ["x"] = { [["xx]], desc = "Cut without saving to buffer" },
     ["X"] = { [["xX]], desc = "Cut without saving to buffer" },
 
+    ["s"] = { [["ss]], desc = "Cut and enter insert mode without saving to buffer" },
+    ["S"] = { [["sS]], desc = "Cut and enter insert mode without saving to buffer" },
+
     ["<M-x>"] = { "<C-w>x", desc = "Swap window with next" },
     ["<M-r>"] = { "<C-w>r", desc = "Rotate windows" },
 
-    ["<Leader>s"] = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], desc = "Replace all occurences of the word under the cursor" },
+    ["<Leader>s"] = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], desc =
+    "Replace all occurences of the word under the cursor" },
 
     -- ["m"] = { "]m", desc = "Next method" },
     -- ["M"] = { "[m", desc = "Previous method" },
   },
   v = {
-    ["<Leader>p"] = { [["rdP]], desc = "Replace" },
+    ["<Leader>p"] = { [["rdP]], desc = "Replace with buffer contents" },
 
     ["<Leader>d"] = { [["dd]], desc = "Delete without saving to buffer" },
     ["<Leader>D"] = { [["dD]], desc = "Delete without saving to buffer" },
 
-    ["<Leader>x"] = { [["xx]], desc = "Cut without saving to buffer" },
-    ["<Leader>X"] = { [["xX]], desc = "Cut without saving to buffer" },
+    -- ["<Leader>x"] = { [["xx]], desc = "Cut without saving to buffer" },
+    -- ["<Leader>X"] = { [["xX]], desc = "Cut without saving to buffer" },
+
+    ["x"] = { [["xx]], desc = "Cut without saving to buffer" },
+    ["X"] = { [["xX]], desc = "Cut without saving to buffer" },
 
     ["c"] = { [["cc]], desc = "Change without saving to buffer" },
     ["C"] = { [["cC]], desc = "Change without saving to buffer" },
@@ -79,7 +86,8 @@ return {
     ["<M-j>"] = { ":m '>+1<CR>gv=gv", desc = "Move lines down" },
     ["<M-k>"] = { ":m '<-2<CR>gv=gv", desc = "Move lines up" },
 
-    ["<Leader>s"] = { [["vy:%s/\<<C-r>v\>/<C-r>v/gI<Left><Left><Left>]], desc = "Replace all occurences of the selected words" },
+    ["<Leader>s"] = { [["vy:%s/\<<C-r>v\>/<C-r>v/gI<Left><Left><Left>]], desc =
+    "Replace all occurences of the selected words" },
   },
   t = {
     -- setting a mapping to false will disable it

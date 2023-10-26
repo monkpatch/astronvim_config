@@ -10,6 +10,8 @@ return {
   --   end,
   -- },
   { "catppuccin/nvim", name = "catppuccin" },
+  -- { "gruvbox-community/gruvbox"},
+  -- { "ellisonleao/gruvbox.nvim" },
   {
     "kylechui/nvim-surround",
     version = "*",                           -- Use for stability; omit to use `main` branch for the latest features
