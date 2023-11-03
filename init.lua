@@ -18,7 +18,9 @@ return {
   },
 
   -- Set colorscheme to use
+  -- Colorscheme begin
   colorscheme = "catppuccin",
+  -- Colorscheme end
   -- colorscheme = "gruvbox",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
